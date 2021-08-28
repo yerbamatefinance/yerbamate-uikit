@@ -2081,6 +2081,7 @@ var IconModule = /*#__PURE__*/Object.freeze({
     TicketIcon: Icon$17,
     TradeIcon: Icon$18,
     TwitterIcon: Icon$19,
+    MetamaskIcon: Icon$20,
     RoadmapIcon: Icon$1a,
     LamaTokenIcon: Icon$1b
 });
