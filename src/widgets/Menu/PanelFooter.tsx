@@ -16,7 +16,16 @@ import { PanelProps, PushedProps } from "./types";
 interface Props extends PanelProps, PushedProps {}
 
 const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
-const { MoonIcon, SunIcon, LanguageIcon } = Icons;
+const { LanguageIcon } = Icons;
+
+const RugDoc = styled.div`
+  display: none;
+  padding: 8px 4px;
+  align-items: center;  
+  background-image: url('https://rugdoc.io/assets/2021/06/rugdoc-review-badge-with-glow.png'); 
+  background-repeat: no-repeat;
+  background-position: left center, right center;
+`
 
 const Container = styled.div`
   flex: none;
@@ -57,8 +66,6 @@ const SocialEntry = styled.div`
 const PanelFooter: React.FC<Props> = ({
   isPushed,
   pushNav,
-  toggleTheme,
-  isDark,
   cakePriceUsd,
   currentLang,
   langs,
@@ -77,6 +84,7 @@ const PanelFooter: React.FC<Props> = ({
 
   return (
     <Container>
+      <RugDoc></RugDoc>
       <SocialEntry>
         {cakePriceUsd ? (
           <PriceLink href={priceLink} target="_blank">
@@ -111,23 +119,11 @@ const PanelFooter: React.FC<Props> = ({
         </Flex>
       </SocialEntry>
       <SettingsEntry>
-        <Button variant="text" onClick={() => toggleTheme(isDark)}>
-          {/* alignItems center is a Safari fix */}
-          <Flex alignItems="center">
-            <SunIcon color={isDark ? "textDisabled" : "text"} width="24px" />
-            <Text color="textDisabled" mx="4px">
-              /
-            </Text>
-            <MoonIcon color={isDark ? "text" : "textDisabled"} width="24px" />
-          </Flex>
-        </Button>
         <Dropdown
           position="top-right"
-          target={
-            <Button variant="text" startIcon={<LanguageIcon color="textSubtle" width="24px" />}>
-              <Text color="textSubtle">{currentLang?.toUpperCase()}</Text>
-            </Button>
-          }
+          target={<Button variant="text" startIcon={<LanguageIcon color="textSubtle" width="24px" />}>
+            <Text color="textSubtle">{currentLang?.toUpperCase()}</Text>
+          </Button>}
         >
           {langs.map((lang) => (
             <MenuButton
@@ -142,7 +138,7 @@ const PanelFooter: React.FC<Props> = ({
           ))}
         </Dropdown>
       </SettingsEntry>
-    </Container>
+    </Container></>
   );
 };
 
