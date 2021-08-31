@@ -2081,7 +2081,6 @@ var IconModule = /*#__PURE__*/Object.freeze({
     TicketIcon: Icon$17,
     TradeIcon: Icon$18,
     TwitterIcon: Icon$19,
-    MetamaskIcon: Icon$20,
     RoadmapIcon: Icon$1a,
     LamaTokenIcon: Icon$1b
 });
@@ -2104,12 +2103,13 @@ var StyledLink$1 = styled(Link$1)(templateObject_1$y || (templateObject_1$y = __
     return theme.mediaQueries.nav;
 });
 var Logo$1 = function (_a) {
-    var isDark = _a.isDark, href = _a.href;
+    var isPushed = _a.isPushed, togglePush = _a.togglePush, isDark = _a.isDark, href = _a.href;
     var isAbsoluteUrl = href.startsWith("http");
     var innerLogo = (React.createElement(React.Fragment, null,
         React.createElement(Icon$q, { className: "mobile-icon" }),
         React.createElement(Logo, { className: "desktop-icon", isDark: isDark })));
     return (React.createElement(Flex, null,
+        React.createElement(MenuButton, { "aria-label": "Toggle menu", onClick: togglePush, mr: "24px" }, isPushed ? (React.createElement(Icon$R, { width: "24px", color: "textSubtle" })) : (React.createElement(Icon$Q, { width: "24px", color: "textSubtle" }))),
         isAbsoluteUrl ? (React.createElement(StyledLink$1, { as: "a", href: href, "aria-label": "Pancake home page" }, innerLogo)) : (React.createElement(StyledLink$1, { to: href, "aria-label": "Pancake home page" }, innerLogo))));
 };
 var templateObject_1$y;
