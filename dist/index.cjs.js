@@ -2249,10 +2249,10 @@ var socials = [
                 label: "English",
                 href: "https://t.me/yerbamatefinance",
             },
-            // {
-            //   label: "Bahasa Indonesia",
-            //   href: "https://t.me/PancakeSwapIndonesia",
-            // },
+            {
+                label: "Español",
+                href: "https://t.me/yerbamatefinanceES",
+            },
             // {
             //   label: "中文",
             //   href: "https://t.me/PancakeSwap_CN",
